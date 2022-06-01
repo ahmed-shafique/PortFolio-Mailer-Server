@@ -1,14 +1,15 @@
-import express from "express";
-import dotenv from "dotenv";
-import sgMail from "@sendgrid/mail";
+import express, { json } from "express";
+import { config } from "dotenv";
 import cors from "cors";
 import sendMail from "./utils/mailer/index.js";
 
-sgMail.setApiKey(
-  "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"
-);
+//import express from "express";
+//import dotenv from "dotenv";
+//import sgMail from "@sendgrid/mail";
+//import cors from "cors";
+//import sendMail from "./utils/mailer/index.js";
 
-dotenv.config({ path: "./config.env" });
+config({ path: "./config.env" });
 const app = express();
 app.use(
   cors({
@@ -16,7 +17,7 @@ app.use(
     methods: "GET,HEAD,PUT,PATCH,POST,DELETE",
   })
 );
-app.use(express.json());
+app.use(json());
 app.disable("x-powered-by");
 
 app.post("/send-mail", (req, res) => {
