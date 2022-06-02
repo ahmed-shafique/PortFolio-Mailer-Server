@@ -1,9 +1,9 @@
-//const nodemailer = require("nodemailer");
-import nodemailer from "nodemailer";
+const nodemailer = require("nodemailer");
+//import nodemailer from "nodemailer";
 //const dotenv = require("dotenv");
-import dotenv from "dotenv";
+//import dotenv from "dotenv";
 //import sgMail from "@sendgrid/mail";
-dotenv.config();
+//dotenv.config();
 //TODO:// check if env variables are set
 async function sendMail(name, email, number, subject, text) {
   try {
@@ -52,5 +52,5 @@ async function sendMail(name, email, number, subject, text) {
     return false;
   }
 }
-
-export default sendMail;
+module.exports = sendMail;
+//export default sendMail;

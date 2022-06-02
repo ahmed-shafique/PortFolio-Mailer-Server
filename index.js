@@ -1,7 +1,13 @@
-import express, { json } from "express";
-import { config } from "dotenv";
-import cors from "cors";
-import sendMail from "./utils/mailer/index.js";
+//import express, { json } from "express";
+const express = require("express");
+//const json = require("express");
+const cors = require("cors");
+
+//import { config } from "dotenv";
+//import cors from "cors";
+
+const sendMail = require("./utils/mailer/index.js");
+//import sendMail from "./utils/mailer/index.js";
 
 //import express from "express";
 //import dotenv from "dotenv";
@@ -9,7 +15,7 @@ import sendMail from "./utils/mailer/index.js";
 //import cors from "cors";
 //import sendMail from "./utils/mailer/index.js";
 
-config({ path: "./config.env" });
+//config({ path: "./config.env" });
 const app = express();
 app.use(
   cors({
@@ -17,7 +23,7 @@ app.use(
     methods: "GET,HEAD,PUT,PATCH,POST,DELETE",
   })
 );
-app.use(json());
+app.use(express.json());
 app.disable("x-powered-by");
 
 app.post("/send-mail", (req, res) => {
@@ -44,3 +50,5 @@ const PORT = process.env.PORT || 4000;
     console.log(e);
   }
 })();
+
+module.exports = app;
