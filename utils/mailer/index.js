@@ -1,5 +1,5 @@
-const nodemailer = require("nodemailer");
-//import nodemailer from "nodemailer";
+//const nodemailer = require("nodemailer");
+import nodemailer from "nodemailer";
 //const dotenv = require("dotenv");
 //import dotenv from "dotenv";
 //import sgMail from "@sendgrid/mail";
@@ -52,5 +52,5 @@ async function sendMail(name, email, number, subject, text) {
     return false;
   }
 }
-module.exports = sendMail;
-//export default sendMail;
+//module.exports = sendMail;
+export default sendMail;

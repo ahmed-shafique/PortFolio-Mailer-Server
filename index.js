@@ -1,13 +1,13 @@
-//import express, { json } from "express";
-const express = require("express");
+import express, { json } from "express";
+//const express = require("express");
 //const json = require("express");
-const cors = require("cors");
+//const cors = require("cors");
 
 //import { config } from "dotenv";
-//import cors from "cors";
+import cors from "cors";
 
-const sendMail = require("./utils/mailer/index.js");
-//import sendMail from "./utils/mailer/index.js";
+//const sendMail = require("./utils/mailer/index.js");
+import sendMail from "./utils/mailer/index.js";
 
 //import express from "express";
 //import dotenv from "dotenv";
@@ -51,4 +51,4 @@ const PORT = process.env.PORT || 4000;
   }
 })();
 
-module.exports = app;
+// module.exports = app;
