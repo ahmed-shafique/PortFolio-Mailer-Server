@@ -26,11 +26,11 @@ app.use(
 app.use(express.json());
 app.disable("x-powered-by");
 
-app.post("/send-mail", (req, res) => {
+app.post("/send-mail", async (req, res) => {
   const { name, email, number, subject, text } = req.body;
   console.log(name, email, number, subject, text);
 
-  const response = sendMail(name, email, number, subject, text);
+  const response = await sendMail(name, email, number, subject, text);
 
   console.log(response);
 
